@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Git学习笔记 | 林宏宇的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="新建文件夹mkdir  进入文件夹cd  显示当前目录pwd 修改文件vi   Esc 退出输入状态  shift + ;  + q! 不保存文件的写入修改 shift + ; + wq!是保存文件的写入修改   查看上一次对某一文件的修改git diff  命令显示从最近到最远的提交日志git log 使用git log–pretty&#x3D;oneline可以更加清晰得看出每次的commi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git学习笔记">
+<meta property="og:url" content="http://linhongyu0090.github.io/2022/04/17/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="林宏宇的博客">
+<meta property="og:description" content="新建文件夹mkdir  进入文件夹cd  显示当前目录pwd 修改文件vi   Esc 退出输入状态  shift + ;  + q! 不保存文件的写入修改 shift + ; + wq!是保存文件的写入修改   查看上一次对某一文件的修改git diff  命令显示从最近到最远的提交日志git log 使用git log–pretty&#x3D;oneline可以更加清晰得看出每次的commi">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-17T12:40:12.000Z">
+<meta property="article:modified_time" content="2022-04-17T12:40:40.287Z">
+<meta property="article:author" content="linhongyu">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="林宏宇的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">林宏宇的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://linhongyu0090.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Git学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/17/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2022-04-17T12:40:12.000Z" itemprop="datePublished">2022-04-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Git学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>新建文件夹mkdir </li>
+<li>进入文件夹cd </li>
+<li>显示当前目录pwd</li>
+<li>修改文件vi</li>
+</ol>
+<ul>
+<li>Esc 退出输入状态 </li>
+<li>shift + ;  + q! 不保存文件的写入修改</li>
+<li>shift + ; + wq!是保存文件的写入修改</li>
+</ul>
+<ol start="5">
+<li><p>查看上一次对某一文件的修改git diff</p>
+</li>
+<li><p>命令显示从最近到最远的提交日志git log<br> 使用git log–pretty&#x3D;oneline可以更加清晰得看出每次的commit(快照),一大串类似1094adb…的是commit id（版本号）</p>
+</li>
+<li><p>查看文件cat</p>
+</li>
+<li><p>命令</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- readme.txt</span><br></pre></td></tr></table></figure>
+<p>意思就是，把readme.txt文件在工作区的修改全部撤销,<strong>git checkout其实是用版本库里的版本替换工作区的版本</strong>，无论工作区是修改还是删除，都可以“一键还原”。</p>
+</li>
+<li><p>用命令git reset HEAD可以把暂存区的修改撤销掉（unstage），重新放回工作区</p>
+</li>
+<li><p>git reset –hard HEAD^可以回退到上一个版本,上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100</p>
+</li>
+<li><p>如果想撤销回退的操作，git reset —hard <commit id></p>
+</li>
+<li><p>Git提供了一个命令git reflog用来记录你的每一次命令,可以查看每一次的commit id</p>
+</li>
+<li><p>git diff HEAD – readme.txt命令可以查看工作区和版本库里面最新版本的区别</p>
+</li>
+<li><p>在文件管理器中把没用的文件删了，或者用rm命令删了,确实要从版本库中删除该文件，那就用命令git rm删掉，并且git commit</p>
+</li>
+<li><p>命令git rm用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。</p>
+</li>
+<li><p>可以很轻松地把误删的文件恢复到最新版本：git checkout – test.txt</p>
+</li>
+<li><p>在本地的learngit仓库下运行命令：$ git remote add origin <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a>:linhongyu0090&#x2F;learngit.git。添加后，远程库的名字就是origin，这是Git默认的叫法，也可以改成别的，但是origin这个名字一看就知道是远程库。下一步，就可以把本地库的所有内容推送到远程库上：$ git push -u origin master</p>
+</li>
+<li><p>只要本地作了提交，就可以通过命令：$ git push origin master把本地master分支的最新修改推送至GitHub</p>
+</li>
+<li><p>如果添加的时候地址写错了，或者就是想删除远程库，可以用git remote rm <name>命令。使用前，建议先用git remote -v查看远程库信息：<br>$ git remote -v<br>origin  <a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#109;">&#x67;&#x69;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#109;</a>:linhongyu0090&#x2F;learn-git.git (fetch)<br>origin  <a href="mailto:&#103;&#105;&#116;&#64;&#103;&#105;&#x74;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;">&#103;&#105;&#116;&#64;&#103;&#105;&#x74;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;</a>:linhongyu0090&#x2F;learn-git.git (push)<br>然后，根据名字删除，比如删除origin：<br>$ git remote rm origin<br>此处的“删除”其实是解除了本地和远程的绑定关系，并不是物理上删除了远程库。远程库本身并没有任何改动。要真正删除远程库，需要登录到GitHub，在后台页面找到删除按钮再删除。</p>
+</li>
+<li><p>远程库已经准备好了，下一步是用命令git clone克隆一个本地库：<br>$ git clone <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#x6d;</a>:linhongyu0090&#x2F;gitskills.git<br>注意把Git库的地址换成你自己的，然后进入gitskills目录看看，已经有README.md文件了：<br>$ cd gitskills<br>$ ls<br>README.md<br>用<a target="_blank" rel="noopener" href="https://github.com/michaelliao/gitskills.git%E8%BF%99%E6%A0%B7%E7%9A%84%E5%9C%B0%E5%9D%80%E3%80%82%E5%AE%9E%E9%99%85%E4%B8%8A%EF%BC%8CGit%E6%94%AF%E6%8C%81%E5%A4%9A%E7%A7%8D%E5%8D%8F%E8%AE%AE%EF%BC%8C%E9%BB%98%E8%AE%A4%E7%9A%84git://%E4%BD%BF%E7%94%A8ssh%EF%BC%8C%E4%BD%86%E4%B9%9F%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8https%E7%AD%89%E5%85%B6%E4%BB%96%E5%8D%8F%E8%AE%AE">https://github.com/michaelliao/gitskills.git这样的地址。实际上，Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议</a></p>
+</li>
+<li><p>首先，我们创建dev分支，然后切换到dev分支：<br>$ git checkout -b dev<br>git branch命令会列出所有分支，当前分支前面会标一个*号。<br>然后，我们就可以在dev分支上正常提交，比如对readme.txt做个修改<br>现在，dev分支的工作完成，我们就可以切换回master分支：<br>$ git checkout master<br>现在，我们把dev分支的工作成果合并到master分支上：<br>$ git merge dev<br>合并完成后，就可以放心地删除dev分支了：<br>$ git branch -d dev<br>switch<br>我们注意到切换分支使用git checkout <branch>，而前面讲过的撤销修改则是git checkout – <file>，同一个命令，有两种作用，确实有点令人迷惑。<br>实际上，切换分支这个动作，用switch更科学。因此，最新版本的Git提供了新的git switch命令来切换分支：<br>创建并切换到新的dev分支，可以使用：<br>$ git switch -c dev<br>直接切换到已有的master分支，可以使用：<br>$ git switch master</p>
+</li>
+<li><p>测试流程&#x3D;&gt; 修改文件 git add 修改文件 git commit 最终提交的是第一次修改 而不是文件最终的样子 <br>证明：提交的是修改而不是文件<br>所以确保在commie 前add所有文件<br>命令git checkout – readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：<br>一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；<br>一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。<br>总之，就是让这个文件回到最近一次git commit或git add时的状态。<br>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout – file。<br>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作。<br>场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。</p>
+</li>
+<li><p>进入虚拟环境存放目录：% cd ~&#x2F;virtualEnvs<br>查看所有的环境：% lsvirtualenv<br>切换到指定的环境（比如env1）：%workon env1<br>在指定的环境下为所欲为</p>
+</li>
+</ol>
+<ul>
+<li><p>比如pip install …</p>
+</li>
+<li><p>查看该环境的包% lssitepackages</p>
+</li>
+<li><p>进入当前环境：% cdvirtualenv</p>
+</li>
+<li><p>进入当前环境site-packages: $%cdsitepackages<br>退出虚拟环境：% deactivate<br>复制虚拟环境：% cpvirtualenv env1 env3 #把env1复制到env3，可不用事先创建env3<br>删除环境: % rmvirtualenv env1</p>
+</li>
+</ul>
+<ol start="24">
+<li><p>创建新的分支 git checkout -b dev<br>相当于:git branch dev<br>git checkout dev</p>
+</li>
+<li><p>列出所有分支 git branch</p>
+</li>
+<li><p>把dev分支的工作成果合并到master分支上 git merge dev</p>
+</li>
+<li><p>删除dev分支了git branch -d dev</p>
+</li>
+<li><p>切换到新的dev分支</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">switch</span> -c dev</span><br></pre></td></tr></table></figure></li>
+<li><p>直接切换到已有的<code>master</code>分支，可以使用：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">switch</span> master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git alias:</p>
+</li>
+</ol>
+<ul>
+<li>inhongyu@bogon learngit % git config –global alias.co checkout</li>
+<li>linhongyu@bogon learngit % git config –global alias.ci commit</li>
+<li>linhongyu@bogon learngit % git config –global alias.br branch</li>
+<li>linhongyu@bogon learngit % git config –global alias.unstage ‘reset HEAD’</li>
+<li>linhongyu@bogon learngit % git config –global alias.last ‘log -1’</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://linhongyu0090.github.io/2022/04/17/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cl23a0v810004xkj0dpq61mph" data-title="Git学习笔记" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/04/17/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">C语言学习笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/04/17/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Git学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/17/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">C语言学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/17/UIkit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">UIkit学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/17/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Swift学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/17/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">C++学习笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 linhongyu<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
