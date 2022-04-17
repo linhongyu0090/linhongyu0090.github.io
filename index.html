@@ -71,6 +71,277 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-UIkit学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/17/UIkit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2022-04-17T10:32:25.000Z" itemprop="datePublished">2022-04-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/17/UIkit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">UIkit学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Uikit学习笔记"><a href="#Uikit学习笔记" class="headerlink" title="Uikit学习笔记"></a>Uikit学习笔记</h1><ol>
+<li><p>Dismiss让当前模态跳转的页面消失,返回到旧页面</p>
+</li>
+<li><p>一个对象可以同时拥有数据和功能</p>
+</li>
+<li><p>一般把变量放在方法的上面</p>
+</li>
+<li><p>lround()把slider.value四舍五入</p>
+</li>
+<li><p>Int(acr4_random(100))获取0～99内的一个随机整数</p>
+</li>
+<li><p>按住ctrl从View Controller（黄色图标的那个）往标签上拖（；注意：直接在标签上按住ctrl拖拽到view controller是没有用的，不要弄反了。动作是从view controller往下拖</p>
+</li>
+<li><p>仅仅是声明你有一个变量是不能自动创建一个相应的对象的。这个变量仅仅是对象的容器。你还需要实例化这个对象并且将它放入容器中。变量只是一个盒子，而对象是盒子中的内容。</p>
+</li>
+<li><p>如何定义一个委托<br>在iOS系统的SDK里，委托无处不在，所以我们最好记住它总是由三个步骤完成。<br> 1、你申明自己有能力成为一个委托——成为UITextField的委托你需要将UITextFieldDelegate写到视图控制器的类的声明中去。这样就告诉了编译器这个视图控制器可以处理来自文本框的消息。<br> 2、你让那个有问题的对象知道视图控制器愿意成为它的委托——在我们这个例子里，这个对象是UITextField。如果你忘记了告诉文本框它有一个委托，则这个文本框永远不会发送任何消息。<br> 3、执行委托方法——如果你没有对你发出的消息进行响应，那么委托根本不会成立。<br> 通常，委托方法是可选的，所以你不需要执行全部的委托方法。例如：UITextFieldDelegate实际上声明了七个方法但是你仅仅关心textField(shouldChangeCharactersIn, replacementString)这一个。<br>五步定义委托<br> 在两个对象之间创建委托可以用以下固定的步骤，比如对象A是对象B的委托，对象B发送消息返回给对象A，步骤如下：<br> 1、为对象B定义一个委托协议<br> 2、给对象B一个可选型的委托变量，这个变量必须是weak的。<br> 3、当某些事件触发时，让对象B发送消息到它的委托，比如用户点击Cancel或者Done按钮时，或者它需要一点信息时。你可以用语句delegate?.methodName(self,…)来完成这个功能。<br> 4、让对象A遵守委托协议。将协议的名称放入类声明，class的哪一行，并且执行协议中的方法列表。<br> 5、告诉对象B，对象A现在是你的委托了。</p>
+</li>
+<li><p>indexPath是一个指向表中具体某一行的一个简单的对象。当table view为cell请求数据源时，你可以通过这一行的indexPath.row属性的内部行号，就可以找到是哪个cell需要数据了。<br> delegate?.addItemController(<strong>self</strong>, didFinishAdding: item)<br> 复习一下整个过程：<br> 1、创建一个新的ChecklistItem对象<br> 2、将这个新创建的对象添加到数据模型中<br> 3、为它在table view插入一个新的cell</p>
+</li>
+<li><p><strong>let</strong> VC &#x3D; ViewControllerTwo()</p>
+<p>​    VC.modalPresentationStyle &#x3D; .fullScreen</p>
+<p>可以设置present的形式</p>
+</li>
+<li><p>import UIKit</p>
+<p>class ViewController: UIViewController {</p>
+<pre><code>override func viewDidLoad() &#123;
+ 
+    super.viewDidLoad()
+</code></pre>
+</li>
+</ol>
+<p>​     </p>
+<pre><code>        let btn1 = createButton(&quot;左上&quot;)
+     
+        self.view.addSubview(btn1)
+</code></pre>
+<p>​<br>​<br>​            let btn2 &#x3D; createButton(“右上”)<br>​<br>            btn2.frame.origin.x &#x3D; self.view.bounds.width - btn2.frame.width</p>
+<pre><code>        self.view.addSubview(btn2)
+</code></pre>
+<p>​<br>​<br>​            let btn3 &#x3D; createButton(“左下”)<br>​<br>            btn3.frame.origin.y &#x3D; self.view.bounds.height - btn3.frame.height</p>
+<pre><code>        self.view.addSubview(btn3)
+</code></pre>
+<p>​<br>​<br>​            let btn4 &#x3D; createButton(“右下”)<br>​<br>            btn4.frame.origin &#x3D; CGPoint(x: self.view.bounds.width - btn4.frame.width,</p>
+<pre><code>            y: self.view.bounds.height - btn4.frame.height)
+     
+        self.view.addSubview(btn4)
+</code></pre>
+<p>​<br>​<br>​            let btn5 &#x3D; createButton(“居中”)<br>​<br>            btn5.center &#x3D; CGPoint(x: self.view.bounds.width &#x2F; 2,</p>
+<pre><code>            y: self.view.bounds.height / 2)
+     
+        self.view.addSubview(btn5)
+</code></pre>
+<p>​<br>​<br>​            let btn6 &#x3D; createButton(“上中”)<br>​<br>            btn6.center.x &#x3D; self.view.bounds.width &#x2F; 2</p>
+<pre><code>        self.view.addSubview(btn6)
+</code></pre>
+<p>​<br>​<br>​            let btn7 &#x3D; createButton(“左中”)<br>​<br>            btn7.center.y &#x3D; self.view.bounds.height &#x2F; 2</p>
+<pre><code>        self.view.addSubview(btn7)
+</code></pre>
+<p>​<br>​<br>​            let btn8 &#x3D; createButton(“右中”)<br>​<br>            btn8.frame.origin.x &#x3D; self.view.bounds.width - btn8.frame.width</p>
+<pre><code>        btn8.center.y = self.view.bounds.height / 2
+     
+        self.view.addSubview(btn8)
+</code></pre>
+<p>​<br>​<br>​            let btn9 &#x3D; createButton(“下中”)<br>​<br>            btn9.center.x &#x3D; self.view.bounds.width &#x2F; 2</p>
+<pre><code>        btn9.frame.origin.y = self.view.bounds.height - btn9.frame.height
+     
+        self.view.addSubview(btn9)
+     
+    &#125;
+</code></pre>
+<p>​<br>​<br>​        func createButton(title: String) -&gt; UIButton {<br>​<br>            &#x2F;&#x2F;创建一个ContactAdd类型的按钮</p>
+<pre><code>        let button:UIButton = UIButton(type:.Custom)
+     
+        //设置按钮大小
+     
+        //button.frame=CGRectMake(0, 0, 80, 50)
+     
+        button.frame.size = CGSize(width: 80, height: 50)
+     
+        //设置按钮文字
+     
+        button.setTitle(title, forState:UIControlState.Normal)
+     
+        button.backgroundColor=UIColor.orangeColor()
+     
+        return button
+     
+    &#125;
+</code></pre>
+<p>​     </p>
+<pre><code>    override func didReceiveMemoryWarning() &#123;
+     
+        super.didReceiveMemoryWarning()
+     
+    &#125;
+
+&#125;
+</code></pre>
+<ol start="12">
+<li><p>func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {<br>&#x2F;&#x2F; Use this method to optionally configure and attach the UIWindow <code>window</code> to the provided UIWindowScene <code>scene</code>.<br>&#x2F;&#x2F; If using a storyboard, the <code>window</code> property will automatically be initialized and attached to the scene.<br>&#x2F;&#x2F; This delegate does not imply the connecting scene or session are new (see <code>application:configurationForConnectingSceneSession</code> instead).</p>
+<p>self.window &#x3D; UIWindow(windowScene: scene as! UIWindowScene);<br>self.window?.backgroundColor &#x3D; UIColor.white;<br>let rootViewController &#x3D; ViewController();<br>self.window?.rootViewController &#x3D; rootViewController;<br>self.window?.makeKeyAndVisible();</p>
+<p>guard let _ &#x3D; (scene as? UIWindowScene) else { return }<br>}</p>
+</li>
+<li><p>如果要添加手势 UILabel().isUserInteractionEnable &#x3D; true</p>
+</li>
+<li><p>command + shift + L 控件库</p>
+</li>
+<li><p>添加手势时候要实力化具体的手势	</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> tap <span class="operator">=</span> <span class="type">UITapGestureRecognizer</span>(target: <span class="keyword">self</span>, action: <span class="keyword">#selector</span>(handleTap))</span><br><span class="line">        tapLabel.addGestureRecognizer(tap)</span><br></pre></td></tr></table></figure>
+<p>如果只写UIGestureRecognizer则不行</p>
+</li>
+<li><p><strong>let</strong> onedegree &#x3D; CGFloat.pi &#x2F; 180</p>
+<p>​     </p>
+<p>​    imageView.transform &#x3D; CGAffineTransform(rotationAngle: CGFloat( 90 * onedegree))</p>
+<p>iOS坐标系和数学上是相反的,正数为顺时针，负数为逆时针</p>
+</li>
+<li><p>&#96;&#96;&#96;swift<br>UIView.animate(withDuration: 3, delay: 0, options: .curveEaseIn){<br>    self.imageView.transform &#x3D; CGAffineTransform(translationX: 100, y: 100).scaledBy(x: 2, y: 2).rotated(by: 90 * onedegree)<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>18.在使用Autolayout时，发现leftAnchor和LeadingAnchor，让我很困惑<br>经过一番查阅后，理解如下:</p>
+<p>在大部分情况下，leftAnchor(左)和LeadingAnchor(前导)相等，因为大部分情况下，文字阅读是从左至右的（英语，法语，西班牙语等）。左（和trailingAnchor(尾随)和右）可以互换使用。<br>在部分情况，如读取方向从右到左（例如希伯来语）的区域中，LeadingAnchor(前导)将是rightAnchor(右)</p>
+<p>这就和文字阅读习惯，和语言有关。一般情况下我们是不用区分，除非考虑这些case</p>
+<ol start="19">
+<li>cornerradius设置为高度的一半就为圆形</li>
+<li>给stackView添加子视图，要用arragnedSubviews</li>
+<li>Command + f全部替换</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://linhongyu0090.github.io/2022/04/17/UIkit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cl235gjil0001zlj04bq50f2c" data-title="UIkit学习笔记" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Swift学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/17/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2022-04-17T10:31:31.000Z" itemprop="datePublished">2022-04-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/17/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Swift学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Swift学习笔记"><a href="#Swift学习笔记" class="headerlink" title="Swift学习笔记"></a>Swift学习笔记</h1><ol>
+<li>类型判断type(of:)</li>
+<li>拼接字符串()要放在字符串里面，里面也可加各种数据类型</li>
+<li>类型别名typealias S &#x3D; String后面即可用S来代替String<br>只有字符串类型才可以通过+拼接,类型转换 Sting() 将其他类型转换为字符串型,将值打印出来，可以通过拼接字符串或者类型转换</li>
+<li>??(空合运算符)语法，如果optional类型的值能解包出来，就返回解包出来的的值，为nil，则返回??后面的值</li>
+</ol>
+<ul>
+<li>value &#x3D;  a! ?? 0</li>
+<li>value &#x3D; a !&#x3D; nil a! : 0</li>
+</ul>
+<ol start="5">
+<li>！在optional类型的值明确存在时候可使用，即解析一个可选类型的值<br>元组也属于值类型，赋值时会拷贝一份新的，也可在声明元组类型时给其中每一个参数起一个名称，就可以通过.名称来获取元组的值，而不需要索引<br>元组可以通过解构赋值eg:let (name1,name2) &#x3D; (1,2),swift可以通过类型推断判断<br>各个元组参数的类型，函数可以返回元组类型的值</li>
+<li>用_可以匿名参数</li>
+<li><strong>可选项绑定</strong>：a为optional类型的<br>if let value  &#x3D; a{<br>}else{<br>}</li>
+<li>隐式解析：<br>var a:Int! &#x3D; 100(明确a有值，后续还可以给a赋值为nil，而普通类型不行)<br>var b:Int &#x3D; a</li>
+<li>Swift中switch-case默认没有穿透效果，所以在每个case语句的句末不需要加break语句，可以在前一个语句末尾加上fallthrough使其具有穿透效果，即可以在匹配成功后继续执行下一个case语句</li>
+<li>Switch可以在一个case中匹配多个值，case 1，2，3<br>case 1..&lt;9<br>case let(10,name)	进行解构赋值(拆分匹配)，如果value中第一个参数值为10，则把第二个参数的值赋给参数名称name<br>case let(name1,name2)where name1 &lt; name2 用where加上额外的条件</li>
+<li>要跳过一定数目的值时使用：<br>for index in stride（from: to : by:){}<br>By为步长，包括开头，不包括结尾<br>for index in stride（from: through : by:){}<br>By为步长，包括开头，包括结尾</li>
+<li>.reversed()可以使其反向，如stride().reversed()</li>
+<li>repeat-while先运行一次，在进行判断</li>
+<li>.count获得字符串的长度</li>
+<li>.endIndex获取的为string最后一个字符的后一位的Index</li>
+<li>若要获取最后一位的Index，则string.index(before:string.endIndex)</li>
+<li>知道相对于startIndex偏移位置，获取Index，则<br>string.index(string.startIndex，ofsetBy：3）ofsetBy后面加的为偏移量<br>获取所要打印的字符串首位Index和末尾Index后，可以通过string[a…b]来获取a到bIndex范围的字符串</li>
+<li>.firstIndex(of:””)可以获取某个字符的Index，但其为optional类型的，需要通过??来确保其为Index类型</li>
+<li>.prefix(Int)可以直接获取字符串的前几个字符</li>
+<li>..&lt;string.endIndex，可以到字符串的最后一位</li>
+<li>.contains(“Character”)用于判断字符串内是否包含某个字符，为Bool类型的值</li>
+<li>.contains(where:String.contains(“String”)用于判断字符串内是否包含某个字符串，为Bool类型的值</li>
+<li>.hasPrefix(“String”)(判断字符串是否有前缀</li>
+<li>.hasSuffix(“String”)(判断字符串是否有后缀</li>
+<li>追加字符串.append(“String”)</li>
+<li>插入字符串.insert(contentsOf:”String”,at:Index)</li>
+<li>替换字符串.replaceSubrange(Range(Index),with”String”)(通过Index范围)</li>
+<li>删除字符串.remove(Range(Index)) </li>
+<li>“””<br>“””三个引号括起来后可以打印里面的内容，注意引号要对齐<br>#“ ”#里面的东西都当成字符串</li>
+<li>可以通过初始化器创建一个数组<br>var a &#x3D; <a href="">Int</a><br>var b &#x3D; Array<Int>()<br>var c &#x3D; Array(repeating:-1,count:3)<br>构造一个含三个-1的数组</li>
+<li>插入数组元素.insert(元素,at:数组下标)</li>
+<li>很多类似字符串，将Range（Index）化成下标</li>
+<li>.sort({})通过一个匿名函数（闭包）来将数组进行排序</li>
+<li>.filter({})通过一个匿名函数（闭包）来将数组进行过滤，返回一个新的</li>
+<li>array[0…]表示从数组的第一位到最后一位</li>
+<li>remove(元素)可以直接删除数组里的元素</li>
+<li>dictionary.update(value,forKey:key)若有key则更新值，若没有则在原字典添加上一个键值对</li>
+<li>dictionary[key ?? “Unknown”] &#x3D; value修改键对应的值</li>
+<li>dictionary.remove(forKey:key)删除key对应的value</li>
+<li>断言assert一般用于类型判断</li>
+<li>guard拦截语句(守护语句)，可用于处理optional类型的值<br>guard let value &#x3D; a(optional类型的） {}</li>
+<li>Inout关键字param:inout Int 在值传递时变成引用传递，可改变参数的值，在使用时要在参数名称前加&amp;，如&amp;a（和指针有点像）</li>
+<li>匿名函数，没有参数，没有返回值<br>var b:()-&gt;Void &#x3D; {()-&gt;Void in return…},可以放在参数类型为()-&gt;Void的函数里</li>
+<li>若一个函数没有参数，没有返回值，用闭包实现函数赋值时可以省略in和前面的函数体部分<br>var<br>Var c &#x3D; {函数实现部分}<br>func test(param:(Int,Int)-&gt;Int){<br>print(param(10,20))<br>}<br>test(param: {$0 + $1})<br>test(param: {return $0 + $1})<br>test(param: {(a:Int,b:Int)-&gt;Int in<br>return  a + b<br>})</li>
+<li>类型大驼峰，变量名小驼峰</li>
+<li>枚举可以定义枚举类型值，也可以给每个枚举设定类型<br>如enum TestEnum:Int{ case a &#x3D; 1<br>case b &#x3D; 2<br>}<br>case a（String）<br>用TestEnum.a.rawValue可以获取枚举的原始值</li>
+<li>若要遍历枚举，则设定枚举类型为CaseIterable</li>
+<li>通过.allcase获取枚举的全部case</li>
+<li>在结构体中只有在方法前面加关键字mutating才能调用这个方法对这个结构体的属性进行修改</li>
+<li>Static let静态属性，只能通过结构体来调用</li>
+<li>结构体实例调用为值传递，实例为常量，改变不了结构体属性</li>
+<li>结构体内部给变量加上private说明此变量只有在结构体内部才能使用<br>类中构造器要调用其它构造器的值永convenience init</li>
+<li>Static func静态方法只能在类中调用，不能在实例中调用</li>
+<li>类实例设置为let，仍然可以改变实例中的var属性</li>
+<li>AnyObject可以赋一个类的类型<br>Any可以赋任何一个类型</li>
+<li>子类对象对父类的一个引用，生成对象叫做实例化，对象&#x3D;实例</li>
+<li>在类中方法前面加上private说明此方法只能在类中使用，而加上public说明既可以在类中使用，也可以在类外面使用</li>
+<li>父类类型的一个引用指向子类类型<br>var stu:Person &#x3D; Student(name:”student”,age:18)</li>
+<li>向下类型转换<br>var stu:Any &#x3D; Student(name:”student”,age:18)<br>var s &#x3D; stu as? Student<br>print(s?.getName())<br>print(s!.getAge())<br>If let s &#x3D; stu as? Student{}</li>
+<li>每当你定义一个新的结构体或者类时，你都是定义了一个新的 Swift 类型。请使用 UpperCamelCase 这种方式来命名类型（如这里的 SomeClass 和 SomeStructure），以便符合标准 Swift 类型的大写命名风格（如 String，Int和 Bool）。请使用 lowerCamelCase 这种方式来命名属性和方法（如 frameRate 和 incrementCount），以便和类型名区分。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://linhongyu0090.github.io/2022/04/17/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cl235gjij0000zlj0bz4o8vyh" data-title="Swift学习笔记" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-C-学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/04/17/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
@@ -295,51 +566,7 @@ this相当于 const Person* const this(常指针常量)，在成员函数后面�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://linhongyu0090.github.io/2022/04/17/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cl232002n0002h3j08hfd2rfz" data-title="C++学习笔记" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-我的第一篇博客文章" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="article-date">
-  <time class="dt-published" datetime="2022-04-17T04:49:36.000Z" itemprop="datePublished">2022-04-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>##第一章</p>
-<p>内容</p>
-<hr>
-<p>##第二章</p>
-<p>内容</p>
-<p>##参考文献</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://linhongyu0090.github.io/2022/04/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" data-id="cl232002m0001h3j058v06n0a" data-title="我的第一篇博客文章" class="article-share-link">Share</a>
+      <a data-url="http://linhongyu0090.github.io/2022/04/17/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cl235gjin0003zlj0hqaf05ut" data-title="C++学习笔记" class="article-share-link">Share</a>
       
       
       
@@ -390,7 +617,7 @@ this相当于 const Person* const this(常指针常量)，在成员函数后面�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://linhongyu0090.github.io/2022/04/17/hello-world/" data-id="cl232002k0000h3j075a57nyp" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://linhongyu0090.github.io/2022/04/17/hello-world/" data-id="cl235gjim0002zlj0ajolhq00" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -433,11 +660,15 @@ this相当于 const Person* const this(常指针常量)，在成员函数后面�
       <ul>
         
           <li>
-            <a href="/2022/04/17/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">C++学习笔记</a>
+            <a href="/2022/04/17/UIkit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">UIkit学习笔记</a>
           </li>
         
           <li>
-            <a href="/2022/04/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
+            <a href="/2022/04/17/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Swift学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/17/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">C++学习笔记</a>
           </li>
         
           <li>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>UIkit学习笔记 | 林宏宇的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Uikit学习笔记 Dismiss让当前模态跳转的页面消失,返回到旧页面  一个对象可以同时拥有数据和功能  一般把变量放在方法的上面  lround()把slider.value四舍五入  Int(acr4_random(100))获取0～99内的一个随机整数  按住ctrl从View Controller（黄色图标的那个）往标签上拖（；注意：直接在标签上按住ctrl拖拽到view contro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UIkit学习笔记">
+<meta property="og:url" content="http://linhongyu0090.github.io/2022/04/17/UIkit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="林宏宇的博客">
+<meta property="og:description" content="Uikit学习笔记 Dismiss让当前模态跳转的页面消失,返回到旧页面  一个对象可以同时拥有数据和功能  一般把变量放在方法的上面  lround()把slider.value四舍五入  Int(acr4_random(100))获取0～99内的一个随机整数  按住ctrl从View Controller（黄色图标的那个）往标签上拖（；注意：直接在标签上按住ctrl拖拽到view contro">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-17T10:32:25.000Z">
+<meta property="article:modified_time" content="2022-04-17T10:32:51.325Z">
+<meta property="article:author" content="linhongyu">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="林宏宇的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">林宏宇的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://linhongyu0090.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-UIkit学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/17/UIkit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2022-04-17T10:32:25.000Z" itemprop="datePublished">2022-04-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      UIkit学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Uikit学习笔记"><a href="#Uikit学习笔记" class="headerlink" title="Uikit学习笔记"></a>Uikit学习笔记</h1><ol>
+<li><p>Dismiss让当前模态跳转的页面消失,返回到旧页面</p>
+</li>
+<li><p>一个对象可以同时拥有数据和功能</p>
+</li>
+<li><p>一般把变量放在方法的上面</p>
+</li>
+<li><p>lround()把slider.value四舍五入</p>
+</li>
+<li><p>Int(acr4_random(100))获取0～99内的一个随机整数</p>
+</li>
+<li><p>按住ctrl从View Controller（黄色图标的那个）往标签上拖（；注意：直接在标签上按住ctrl拖拽到view controller是没有用的，不要弄反了。动作是从view controller往下拖</p>
+</li>
+<li><p>仅仅是声明你有一个变量是不能自动创建一个相应的对象的。这个变量仅仅是对象的容器。你还需要实例化这个对象并且将它放入容器中。变量只是一个盒子，而对象是盒子中的内容。</p>
+</li>
+<li><p>如何定义一个委托<br>在iOS系统的SDK里，委托无处不在，所以我们最好记住它总是由三个步骤完成。<br> 1、你申明自己有能力成为一个委托——成为UITextField的委托你需要将UITextFieldDelegate写到视图控制器的类的声明中去。这样就告诉了编译器这个视图控制器可以处理来自文本框的消息。<br> 2、你让那个有问题的对象知道视图控制器愿意成为它的委托——在我们这个例子里，这个对象是UITextField。如果你忘记了告诉文本框它有一个委托，则这个文本框永远不会发送任何消息。<br> 3、执行委托方法——如果你没有对你发出的消息进行响应，那么委托根本不会成立。<br> 通常，委托方法是可选的，所以你不需要执行全部的委托方法。例如：UITextFieldDelegate实际上声明了七个方法但是你仅仅关心textField(shouldChangeCharactersIn, replacementString)这一个。<br>五步定义委托<br> 在两个对象之间创建委托可以用以下固定的步骤，比如对象A是对象B的委托，对象B发送消息返回给对象A，步骤如下：<br> 1、为对象B定义一个委托协议<br> 2、给对象B一个可选型的委托变量，这个变量必须是weak的。<br> 3、当某些事件触发时，让对象B发送消息到它的委托，比如用户点击Cancel或者Done按钮时，或者它需要一点信息时。你可以用语句delegate?.methodName(self,…)来完成这个功能。<br> 4、让对象A遵守委托协议。将协议的名称放入类声明，class的哪一行，并且执行协议中的方法列表。<br> 5、告诉对象B，对象A现在是你的委托了。</p>
+</li>
+<li><p>indexPath是一个指向表中具体某一行的一个简单的对象。当table view为cell请求数据源时，你可以通过这一行的indexPath.row属性的内部行号，就可以找到是哪个cell需要数据了。<br> delegate?.addItemController(<strong>self</strong>, didFinishAdding: item)<br> 复习一下整个过程：<br> 1、创建一个新的ChecklistItem对象<br> 2、将这个新创建的对象添加到数据模型中<br> 3、为它在table view插入一个新的cell</p>
+</li>
+<li><p><strong>let</strong> VC &#x3D; ViewControllerTwo()</p>
+<p>​    VC.modalPresentationStyle &#x3D; .fullScreen</p>
+<p>可以设置present的形式</p>
+</li>
+<li><p>import UIKit</p>
+<p>class ViewController: UIViewController {</p>
+<pre><code>override func viewDidLoad() &#123;
+ 
+    super.viewDidLoad()
+</code></pre>
+</li>
+</ol>
+<p>​     </p>
+<pre><code>        let btn1 = createButton(&quot;左上&quot;)
+     
+        self.view.addSubview(btn1)
+</code></pre>
+<p>​<br>​<br>​            let btn2 &#x3D; createButton(“右上”)<br>​<br>            btn2.frame.origin.x &#x3D; self.view.bounds.width - btn2.frame.width</p>
+<pre><code>        self.view.addSubview(btn2)
+</code></pre>
+<p>​<br>​<br>​            let btn3 &#x3D; createButton(“左下”)<br>​<br>            btn3.frame.origin.y &#x3D; self.view.bounds.height - btn3.frame.height</p>
+<pre><code>        self.view.addSubview(btn3)
+</code></pre>
+<p>​<br>​<br>​            let btn4 &#x3D; createButton(“右下”)<br>​<br>            btn4.frame.origin &#x3D; CGPoint(x: self.view.bounds.width - btn4.frame.width,</p>
+<pre><code>            y: self.view.bounds.height - btn4.frame.height)
+     
+        self.view.addSubview(btn4)
+</code></pre>
+<p>​<br>​<br>​            let btn5 &#x3D; createButton(“居中”)<br>​<br>            btn5.center &#x3D; CGPoint(x: self.view.bounds.width &#x2F; 2,</p>
+<pre><code>            y: self.view.bounds.height / 2)
+     
+        self.view.addSubview(btn5)
+</code></pre>
+<p>​<br>​<br>​            let btn6 &#x3D; createButton(“上中”)<br>​<br>            btn6.center.x &#x3D; self.view.bounds.width &#x2F; 2</p>
+<pre><code>        self.view.addSubview(btn6)
+</code></pre>
+<p>​<br>​<br>​            let btn7 &#x3D; createButton(“左中”)<br>​<br>            btn7.center.y &#x3D; self.view.bounds.height &#x2F; 2</p>
+<pre><code>        self.view.addSubview(btn7)
+</code></pre>
+<p>​<br>​<br>​            let btn8 &#x3D; createButton(“右中”)<br>​<br>            btn8.frame.origin.x &#x3D; self.view.bounds.width - btn8.frame.width</p>
+<pre><code>        btn8.center.y = self.view.bounds.height / 2
+     
+        self.view.addSubview(btn8)
+</code></pre>
+<p>​<br>​<br>​            let btn9 &#x3D; createButton(“下中”)<br>​<br>            btn9.center.x &#x3D; self.view.bounds.width &#x2F; 2</p>
+<pre><code>        btn9.frame.origin.y = self.view.bounds.height - btn9.frame.height
+     
+        self.view.addSubview(btn9)
+     
+    &#125;
+</code></pre>
+<p>​<br>​<br>​        func createButton(title: String) -&gt; UIButton {<br>​<br>            &#x2F;&#x2F;创建一个ContactAdd类型的按钮</p>
+<pre><code>        let button:UIButton = UIButton(type:.Custom)
+     
+        //设置按钮大小
+     
+        //button.frame=CGRectMake(0, 0, 80, 50)
+     
+        button.frame.size = CGSize(width: 80, height: 50)
+     
+        //设置按钮文字
+     
+        button.setTitle(title, forState:UIControlState.Normal)
+     
+        button.backgroundColor=UIColor.orangeColor()
+     
+        return button
+     
+    &#125;
+</code></pre>
+<p>​     </p>
+<pre><code>    override func didReceiveMemoryWarning() &#123;
+     
+        super.didReceiveMemoryWarning()
+     
+    &#125;
+
+&#125;
+</code></pre>
+<ol start="12">
+<li><p>func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {<br>&#x2F;&#x2F; Use this method to optionally configure and attach the UIWindow <code>window</code> to the provided UIWindowScene <code>scene</code>.<br>&#x2F;&#x2F; If using a storyboard, the <code>window</code> property will automatically be initialized and attached to the scene.<br>&#x2F;&#x2F; This delegate does not imply the connecting scene or session are new (see <code>application:configurationForConnectingSceneSession</code> instead).</p>
+<p>self.window &#x3D; UIWindow(windowScene: scene as! UIWindowScene);<br>self.window?.backgroundColor &#x3D; UIColor.white;<br>let rootViewController &#x3D; ViewController();<br>self.window?.rootViewController &#x3D; rootViewController;<br>self.window?.makeKeyAndVisible();</p>
+<p>guard let _ &#x3D; (scene as? UIWindowScene) else { return }<br>}</p>
+</li>
+<li><p>如果要添加手势 UILabel().isUserInteractionEnable &#x3D; true</p>
+</li>
+<li><p>command + shift + L 控件库</p>
+</li>
+<li><p>添加手势时候要实力化具体的手势	</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> tap <span class="operator">=</span> <span class="type">UITapGestureRecognizer</span>(target: <span class="keyword">self</span>, action: <span class="keyword">#selector</span>(handleTap))</span><br><span class="line">        tapLabel.addGestureRecognizer(tap)</span><br></pre></td></tr></table></figure>
+<p>如果只写UIGestureRecognizer则不行</p>
+</li>
+<li><p><strong>let</strong> onedegree &#x3D; CGFloat.pi &#x2F; 180</p>
+<p>​     </p>
+<p>​    imageView.transform &#x3D; CGAffineTransform(rotationAngle: CGFloat( 90 * onedegree))</p>
+<p>iOS坐标系和数学上是相反的,正数为顺时针，负数为逆时针</p>
+</li>
+<li><p>&#96;&#96;&#96;swift<br>UIView.animate(withDuration: 3, delay: 0, options: .curveEaseIn){<br>    self.imageView.transform &#x3D; CGAffineTransform(translationX: 100, y: 100).scaledBy(x: 2, y: 2).rotated(by: 90 * onedegree)<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>18.在使用Autolayout时，发现leftAnchor和LeadingAnchor，让我很困惑<br>经过一番查阅后，理解如下:</p>
+<p>在大部分情况下，leftAnchor(左)和LeadingAnchor(前导)相等，因为大部分情况下，文字阅读是从左至右的（英语，法语，西班牙语等）。左（和trailingAnchor(尾随)和右）可以互换使用。<br>在部分情况，如读取方向从右到左（例如希伯来语）的区域中，LeadingAnchor(前导)将是rightAnchor(右)</p>
+<p>这就和文字阅读习惯，和语言有关。一般情况下我们是不用区分，除非考虑这些case</p>
+<ol start="19">
+<li>cornerradius设置为高度的一半就为圆形</li>
+<li>给stackView添加子视图，要用arragnedSubviews</li>
+<li>Command + f全部替换</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://linhongyu0090.github.io/2022/04/17/UIkit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cl235gjil0001zlj04bq50f2c" data-title="UIkit学习笔记" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/04/17/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Swift学习笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/04/17/UIkit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">UIkit学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/17/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Swift学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/17/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">C++学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/17/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 linhongyu<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
